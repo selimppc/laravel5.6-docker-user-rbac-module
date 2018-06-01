@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    $data = \Illuminate\Support\Facades\DB::table('users')->get();
-    print_r($data);
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
